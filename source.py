@@ -31,7 +31,7 @@ class GameScene(NSObject):
         self.setup_camera()
         self.setup_light()
         self.scene_view.setScene_(self.scene)
-        self.scene_view.setBackgroundColor_(NSColor.whiteColor())
+        self.scene_view.setBackgroundColor_(globals['NSColor'].whiteColor())
 
         self.window.contentView().addSubview_(self.scene_view)
         self.window.makeKeyAndOrderFront_(None)
@@ -117,7 +117,7 @@ class GameScene(NSObject):
         light_node = globals()['SCNNode'].node()
         light = globals()['SCNLight'].light()
         light.setType_(globals()['SCNLightTypeOmni'])
-        light_node.setOpacity_(20)
+        light_node.setOpacity_(0)
         light.setColor_(NSColor.whiteColor())
         light_node.setLight_(light)
         light_node.setPosition_((0, 10, 10))
